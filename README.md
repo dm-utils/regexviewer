@@ -13,6 +13,8 @@ its own colour, with the pattern explained in plain language.
 
 **64-bit Notepad++ only.** See [src/help.txt](src/help.txt) for usage.
 
+**Website:** [datamodder.com/en/utils/regex-viewer](https://datamodder.com/en/utils/regex-viewer)
+
 ## Build
 
 Visual Studio C++ build tools and git required. `fetch_vendor.cmd` (called
