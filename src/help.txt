@@ -4,6 +4,8 @@ Datamodder Regex Viewer - Help
 Paste a regex the way you got it - from ChatGPT, Claude, Stack Overflow or
 your own code - and see what it does in the document you have open.
 
+For Notepad++ 8.3 or later: 64-bit, 32-bit or ARM64.
+
 
 QUICK START
 -----------
