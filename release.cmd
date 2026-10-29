@@ -17,8 +17,10 @@ for /f "usebackq tokens=*" %%i in (
 ) do set VS_PATH=%%i
 if "%VS_PATH%"=="" ( echo VS C++ tools not found & exit /b 1 )
 
-call .\fetch_vendor.cmd >nul
-if errorlevel 1 exit /b 1
+if not exist "vendor\regex\include\boost\regex.hpp" (
+    echo Boost.Regex is missing. Run: git submodule update --init
+    exit /b 1
+)
 
 set "ARCHS=%*"
 if "%ARCHS%"=="" set "ARCHS=x64"

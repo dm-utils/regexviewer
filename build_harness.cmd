@@ -2,8 +2,10 @@
 setlocal
 cd /d "%~dp0"
 
-call .\fetch_vendor.cmd >nul
-if errorlevel 1 exit /b 1
+if not exist "vendor\regex\include\boost\regex.hpp" (
+    echo Boost.Regex is missing. Run: git submodule update --init 1>&2
+    exit /b 1
+)
 
 set VSWHERE="%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe"
 if not exist %VSWHERE% ( echo vswhere.exe not found & exit /b 1 )

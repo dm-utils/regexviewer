@@ -17,10 +17,13 @@ For 64-bit, 32-bit and ARM64 Notepad++. See [src/help.txt](src/help.txt) for usa
 
 ## Build
 
-Visual Studio C++ build tools and git required. `fetch_vendor.cmd` (called
-by the build scripts) fetches Boost.Regex into `vendor\`.
+Visual Studio C++ build tools required. Boost.Regex comes in as a git
+submodule (`vendor/regex`, pinned to boost-1.89.0), so clone with
+`--recursive` (or run `git submodule update --init` in an existing clone):
 
 ```
+git clone --recursive https://github.com/dm-utils/regexviewer.git
+cd regexviewer
 build.cmd            compile, close Notepad++, deploy to plugins\RegexViewer, restart
 build.cmd nodeploy   compile only (build\RegexViewer.dll)
 ```
