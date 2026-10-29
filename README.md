@@ -11,7 +11,7 @@ its own colour, with the pattern explained in plain language.
 - Converted for Notepad++'s Find, with Replace and Replace all
 - Runs on Boost.Regex, the same engine as Notepad++'s own Find
 
-**64-bit Notepad++ only.** See [src/help.txt](src/help.txt) for usage.
+For 64-bit, 32-bit and ARM64 Notepad++. See [src/help.txt](src/help.txt) for usage.
 
 **Website:** [datamodder.com/en/utils/regex-viewer](https://datamodder.com/en/utils/regex-viewer)
 
@@ -25,10 +25,23 @@ build.cmd            compile, close Notepad++, deploy to plugins\RegexViewer, re
 build.cmd nodeploy   compile only (build\RegexViewer.dll)
 ```
 
+## Release
+
+```
+release.cmd
+```
+
+Builds `RegexViewer.dll` and zips it with `help.txt` into
+`release_staging\RegexViewer.zip` (x64) or `RegexViewer_<arch>.zip`, printing
+the SHA-256 the plugin lists need. By default only x64;
+`release.cmd x64 x86 arm64` (or the commented line in the script) also builds
+the Win32 and ARM64 versions. ARM64 needs the "MSVC C++ ARM64/ARM64EC build
+tools" component of Visual Studio.
+
 ## Test
 
 ```
-test.cmd
+test.cmd             (test.cmd x86 runs them as a 32-bit program)
 ```
 
 Golden tests for extracting regexes from pasted code, the explanation,
